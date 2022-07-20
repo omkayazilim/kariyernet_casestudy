@@ -1,0 +1,118 @@
+footer { 
+    background-color: #4d5860; @include padding(55px 0 25px); 
+    .footer-top{
+       .footer-info-cards{
+           .footer-heading{
+                color: #fff;
+                font-size: 20px;
+                margin-bottom: 37px;
+                font-family: $bold;
+           }
+           .status{
+               color: #eaeaea;
+                font-size: 17px;
+                font-family: $semibold;
+                margin-bottom: 20px;
+           }
+           .info-list{
+               li{
+                   margin-bottom: 10px;
+                   i{
+                       color: #eaeaea;
+                   }
+                   span{
+                       font-family: $semibold;
+                       color: #eaeaea;
+                       line-height: 22px;
+                       display: block;
+                       font-size: 17px;
+                   }
+                   .adress-text{
+                       width: 70%;
+                   }
+               }
+           }
+       }
+       .footer-menu-list-main{
+           .menu-heading{
+               font-size: 20px;
+               color: #fff;
+               font-family: $semibold;
+               margin-bottom: 37px;
+           }
+           .footer-menu-list{
+               display: flex;
+               flex-direction: column;
+               flex-wrap: wrap;
+               height: 150px;
+               @include desktop-sm{
+                height: 167px;
+               }
+               li{
+                   margin-bottom: 20px;
+                   .footer-links{
+                       font-size: 17px;
+                       font-family: $semibold;
+                       color: #eaeaea;
+                       @extend %transition2;
+                       &:hover{
+                           opacity: 0.7;
+                       }
+                   }
+               }
+           }
+       }
+
+    
+    }
+    .footer-bottom{
+        .footer-bottom-main{
+            border-top: 1px solid #a0a0a0;
+            padding-top: 22px;
+            @include margin-top(120px);
+            .social-list{
+                li{
+                    margin-right: 16px; @include mobile-l{
+                        margin-right: 8px; }
+                    &:last-child{
+                        margin-right: 0px; }
+                        
+                    a{
+                        color: #fff;
+                        @extend %transition2;
+                        i{
+                            @extend %transition2;
+                        }
+                        &:hover{
+                            i{
+                                
+                                opacity: 0.7;
+                            }
+                        }
+                    }
+                }
+            }
+            .copyright{
+                font-size: 15px;
+                color: #eaeaea;
+                font-family: $semibold;
+            }
+            .lang-list{
+                li{
+                    margin-right: 10px;
+                    font-family: $medium;
+                    color: #fff;
+                    @extend %transition2;
+                    cursor: pointer;
+                    &.active,
+                    &:hover{
+                        opacity: 0.7;
+                    }
+                    &:last-child{
+                        margin-right: 0px;
+                    }
+                }
+            }
+        }
+    }
+}

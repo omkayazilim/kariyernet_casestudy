@@ -1,0 +1,5 @@
+.page-heading{
+    @include font-size(40px);
+    font-family: $bold;
+    @include padding(80px 0);
+}

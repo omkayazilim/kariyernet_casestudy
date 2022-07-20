@@ -1,0 +1,14 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/AdvertService/obj
+/Applications/bin/Debug/net6.0
+/Applications/obj
+/Domain/bin/Debug/net6.0
+/Domain/obj
+/Infrastructer/bin/Debug/net6.0
+/Infrastructer/obj
+/View/bin/Debug/net6.0
+/View/obj

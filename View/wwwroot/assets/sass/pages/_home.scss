@@ -1,0 +1,159 @@
+.home-header-section {
+    height: calc(100vh - 152px);
+    margin-bottom: 100px;
+
+    @include mobile-display {
+        height: inherit;
+        margin-bottom: 40px;
+    }
+
+    .home-header-slider {
+        height: 100%;
+
+        .swiper-slide {
+            height: 100%;
+            position: relative;
+
+            .slider-image {
+                width: 45%;
+                height: 100%;
+                object-fit: cover;
+                position: absolute;
+                left: 0px;
+                top: 0px;
+
+                @include mobile-display {
+                    position: relative;
+                    width: 100%;
+                    height: 400px;
+                    margin-bottom: 20px;
+                }
+
+                @include mobile-xsm {
+                    height: 349px;
+                }
+            }
+
+            .slider-text {
+                width: 50%;
+                margin-left: auto;
+
+                @include mobile-display {
+                    width: 100%;
+                    margin-left: inherit;
+                }
+
+                .heading {
+                    @include font-size(40px);
+                    font-family: $bold;
+                    color: #000;
+                    margin-bottom: 35px;
+                    @include fadeslow;
+                    @include mobile-l{
+                        font-size: 18px;
+                        width: 90%;
+                        margin-bottom: 25px;
+                    }
+                    
+                }
+
+                .slider-small-text {
+                    font-size: 17px;
+                    font-family: $medium;
+                    line-height: 22px;
+                    @include fadeslow2;
+                    @include mobile-l{
+                        font-size: 15px;
+                        line-height: 22px;
+                    }
+                }
+
+                .paginations {
+                    @include margin-top(90px);
+
+                    .swiper-pagination-bullet {
+                        width: 14px;
+                        height: 14px;
+                        background-color: #000000;
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+.certifica-section {
+    .certifica-heading {
+        @include font-size(40px);
+        font-family: $semibold;
+        text-align: center;
+    }
+
+    .home-certificas-main {
+        .home-certifica-slider {
+            .swiper-slide {
+                .certifica-card {
+                    display: block;
+                    height: 186px;
+                    position: relative;
+
+                    @include mobile-l {
+                        height: 136px;
+                    }
+
+                    &:hover {
+                        &::before {
+                            opacity: 1;
+                        }
+
+                        i {
+                            opacity: 1;
+                        }
+                    }
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+
+                    i {
+                        @include font-size(30px);
+                        opacity: 0;
+                        color: #fff;
+                        @extend %transition2;
+                    }
+
+                    &::before {
+                        content: '';
+                        background-color: rgba(0, 0, 0, 0.5);
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        top: 0px;
+                        opacity: 0;
+                        @extend %transition2;
+                    }
+                }
+            }
+
+            .certificar-butons {
+                .btn {
+                    width: 60px;
+                    height: 60px;
+                    border: 1px solid #000000;
+                    border-radius: 0px;
+                    @include mobile-l{
+                        width: 45px;
+                        height: 45px;
+                    }
+                    i {
+                        color: #000;
+                        @include font-size(20px);
+                    }
+                }
+            }
+        }
+    }
+}

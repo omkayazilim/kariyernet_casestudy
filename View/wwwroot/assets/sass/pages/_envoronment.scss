@@ -1,0 +1,43 @@
+
+.envorint-section{
+    .page-heading{
+        padding-bottom: 20px;
+    }
+    .environment-main{
+        .environment-name{
+            @include font-size(30px);
+            font-family: $bold;
+            @include padding-bottom(50px);
+        }
+        .environt-text{
+            padding-right: 30px;
+            @include mobile-display{
+                padding-right: 0px;
+            }
+            p{
+                font-size: 17px;
+                font-family: $semibold;
+                margin-bottom: 20px;
+                line-height: 22px;
+                @include mobile-l{
+                    font-size: 14px;
+                }
+            }
+        
+        }
+        .environt-image{
+            height: 600px;
+            @include desktop-sm{
+                height: 516px;
+            }
+            @include mobile-l{
+                height: 403px;
+            }
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}

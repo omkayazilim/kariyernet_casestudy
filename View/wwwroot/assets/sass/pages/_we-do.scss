@@ -1,0 +1,33 @@
+.we-do-main{
+    .we-do-image{
+        height: 430px;
+        @include desktop-sm{
+            height: 320px;
+        }
+        @include mobile-l{
+            height: 274px;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    .we-text{
+        .heading{
+            @include font-size(30px);
+            margin-bottom: 40px;
+            font-family: $bold;
+            padding-top: 20px;
+        }
+        .text{
+            font-family: $semibold;
+            font-size: 17px;
+            line-height: 22px;
+            color: #000000;
+            @include mobile-l{
+                font-size: 14px;
+            }
+        }
+    }
+}

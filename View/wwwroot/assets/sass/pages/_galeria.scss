@@ -1,0 +1,26 @@
+.galeria-main {
+    .card-columns {
+        column-count: 3; 
+        column-gap: 20px;
+        @include mobile-l{
+            column-count: 1;   
+        }
+        .galeria-card { display: inline-block; position: relative; margin-bottom: 20px;
+
+            &:hover {
+                &::before { opacity: 1; }
+                i{
+                    opacity: 1;
+                }
+            }
+
+            img { width: 100%; height: 100%; 
+                object-fit: cover; }
+
+            i { @include font-size(30px); opacity: 0; color: #fff;  @extend %transition2; }
+
+            &::before { content: ''; background-color: rgba(0, 0, 0, 0.5); width: 100%; height: 100%; position: absolute; top: 0px; opacity: 0; 
+                @extend %transition2; }
+        }
+    }
+}

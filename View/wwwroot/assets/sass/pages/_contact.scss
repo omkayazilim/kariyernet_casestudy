@@ -1,0 +1,68 @@
+.contact-main {
+    .left {
+        .contact-info-card { margin-bottom: 40px; 
+
+            &:last-child { margin-bottom: 0px; }
+
+            .info-heading { font-family: $bold; font-size: 20px; padding-left: 39px; @include margin-bottom(37px); }
+
+            .status { font-size: 17px; font-family: $semibold; padding-left: 39px; margin-bottom: 20px; }
+
+            .info-list {
+                li { margin-bottom: 5px; 
+
+                    i { color: #000; }
+
+                    span { font-family: $semibold; color: #000; line-height: 22px; display: block; font-size: 17px; }
+
+                    .adress-text { width: 70%; }
+                }
+            }
+        }
+
+        .info-social-card {
+            .heading { font-size: 20px; font-family: $bold; }
+
+            .contact-social-list { @include margin-top(45px); 
+
+                li { margin-right: 20px; 
+
+                    &:last-child { margin-right: 0px; }
+
+                    a {
+                        i { color: #000; @include font-size(30px); }
+                    }
+                }
+            }
+        }
+    }
+
+    .right {
+        form {
+            .form-box {
+                .form-label { font-size: 17px; font-family: $bold; padding-left: 20px; padding-bottom: 10px; }
+
+                .form-control { height: 60px; border: 1px solid #c7c7c7; background-color: #ffffff; font-size: 17px; padding-left: 20px; font-family: $semibold; 
+
+                    &:focus { box-shadow: none; border-color: #000000; }
+                }
+
+                .area { resize: none; min-height: 124px; }
+            }
+
+            .btn-submit-style { height: 60px; border-radius: 0px; border: 1px solid #000; color: #000; font-family: $semibold; 
+                @extend %transition2; font-size: 17px; @include mobile-l { height: 50px; }
+
+                &.active,
+                &:hover { background-color: #4d5860; color: #fff; border-color: #4d5860; }
+
+                &.active {
+                    span { opacity: 0; }
+
+                    .spinner-anime { opacity: 1; visibility: visible; }
+                }
+
+            }
+        }
+    }
+}

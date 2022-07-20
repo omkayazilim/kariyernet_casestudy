@@ -1,0 +1,120 @@
+.top-info{
+    background-color: #4d5860;
+    .left{
+        height: 50px; 
+        .social-list{
+            li{
+                margin-right: 16px;
+                &:last-child{
+                    margin-right: 0px; }
+                    
+                a{
+                    color: #fff;
+                    @extend %transition2;
+                    i{
+                        @extend %transition2;
+                    }
+                    &:hover{
+                        i{
+                            
+                            opacity: 0.7;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .right{
+        .lang-list{
+            li{
+                margin-right: 10px;
+                font-family: $medium;
+                color: #fff;
+                @extend %transition2;
+                cursor: pointer;
+                &.active,
+                &:hover{
+                    opacity: 0.7;
+                }
+                &:last-child{
+                    margin-right: 0px;
+                }
+            }
+        }
+    }
+}
+.navbar { @include padding(18px 0); box-shadow: 0 5px 25px rgba(0, 0, 0, 0.16); 
+    .navbar-main { align-items: end; @include mobile-display{
+            align-items: center; }
+        .navbar-brand { width: 110px; 
+            img,
+            .svg { @extend %img-size; }
+        }
+
+        .navicon { z-index: 5; height: 23px; top: 0px; right: 0px; position: relative; @include mobile-display { display: block !important; top: 1px; }
+
+            &::before { box-shadow: #000 0 14px 0 0; position: absolute; top: 0px; }
+
+            &::after { position: absolute; top: 7px; }
+
+            &::before,
+            &::after { background: #000; -webkit-backface-visibility: hidden; 
+                backface-visibility: hidden; content: ""; height: 3px; width: 25px; left: 0; border-radius: 5px; }
+        }
+
+        .navicon--active {
+
+            &::before { background: #fff; box-shadow: #fff 0 0 0 0; top: 9px; border-radius: 0px; -webkit-transform: rotate(225deg); transform: rotate(225deg); width: 25px !important; }
+
+            &::after { background: #fff; top: 9px; -webkit-transform: rotate(315deg); border-radius: 0px; transform: rotate(315deg); width: 25px !important; margin-left: inherit; }
+        }
+
+        .navbar-collapse { z-index: 4;
+             @include mobile-display {width: 50%; height: 100vh; transition: ease-in 0.2s all; position: fixed; 
+                background-color: #4d5860; padding: 0 0px; box-shadow: 0 3px 25px rgba(37, 77, 128, 0.25); right: -100%; top: 0px; }
+
+            
+
+            .navbar-nav { margin-left: auto; @include mobile-display { height: 100vh; justify-content: center; }
+
+                .nav-item { margin-right: 30px; position: relative; height: 100%; cursor: pointer; @include desktop-l{
+                        margin-right: 15px; }
+                    @include desktop-sm{
+                        margin-right: 20px; }
+                    @include mobile-l { margin-bottom: 15px !important; }
+
+                    &:last-child { margin-right: 0px; }
+
+                    &:hover {
+                        .sub-menu { display: block; }
+                        .nav-link{
+                            @extend %transition2; color: #eaeaea; opacity: 0.7; @include mobile-display{
+                                color: #fff; }
+                        }
+                    }
+
+                    &.active {
+                        .nav-link { color: #4d5860; }
+                    }
+
+
+                    @include mobile-display { width: 100%; height: fit-content; margin-right: 0px; margin-bottom: 25px; }
+
+                    .nav-link { color: #000000; font-family: $semibold; @include font-size(17px); position: relative; cursor: pointer; padding: 0px; 
+                        &:hover{
+                            color: #4d5860; }
+                        @include mobile-display { text-align: center; color: #fff; display: block !important; width: fit-content; margin: auto; }
+                        @include desktop-sm{
+                            font-size: 14px; }
+                        @include mobile-l { font-size: 16px; padding: 0 0 5px; }
+                    }
+                }
+
+            }
+
+        }
+
+        .navbar-collapse--active { right: 0px; }
+    }
+}
+

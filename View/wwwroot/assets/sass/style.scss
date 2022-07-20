@@ -1,0 +1,26 @@
+@import "base/variables";
+@import "base/media";
+@import "base/animation";
+@import "base/extend";
+@import "base/reset";
+@import "base/font"; 
+
+/*components*/
+@import "components/rfs";
+@import "components/heading";
+
+/*card*/
+
+
+/*Layout*/
+@import "layout/navbar-menu";
+@import "layout/footer";
+
+/*page*/
+@import "pages/home";
+@import "pages/operations";
+@import "pages/envoronment";
+@import "pages/we-do";
+@import "pages/galeria";
+@import "pages/who-we-are";
+@import "pages/contact";
