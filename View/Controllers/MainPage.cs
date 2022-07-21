@@ -13,7 +13,7 @@ namespace Advert.View.Controllers
     {
 
        
-        public MainPage(IAppBussiness apbussiness)
+        public MainPage()
         {
         }
         public async Task<IActionResult> Index()

@@ -1,0 +1,68 @@
+﻿    
+@model AdvertViewModel
+<header class="page-header page-header-compact page-header-light border-bottom bg-white mb-4">
+    <div class="container-fluid px-4">
+        <div class="page-header-content">
+            <div class="row align-items-center justify-content-between pt-3">
+                <div class="col-auto mb-3">
+                    <h1 class="page-header-title">
+                        <span class="page-header-icon"><i data-feather="list"></i></span>
+                      İlan Listesi
+                    </h1>
+                </div>
+             <div class="col-12 col-xl-auto mb-3">
+                    <a class="btn btn-sm btn-light text-primary"  asp-controller="Advert" asp-action="Create">
+                        <i class="me-1" data-feather="plus"></i>
+                       Yeni İlan Ekle
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container-fluid px-4">
+    <div class="card">
+        <div class="card-body">
+            <table id="datatablesSimple">
+                <thead>
+                    <tr>
+                        <th>İlan Title</th>
+                        <th>İlan Açıklama</th>
+                        <th>Yan Haklar</th>
+                        <th>Calışma Sekli</th>
+                        <th>Ücret</th>
+                        <th>Kalite</th>
+                        <th>Yayın Tarihi</th>
+                        <th>Bitiş Tarihi</th>
+                        <th>Durum</th>
+
+                        <th>#</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.AdvertList)
+                    {
+                        <tr>
+                            <td>@item.PositionTitle</td>
+                            <td>@item.PositionDesc</td>
+                            <td>@item.Benefits</td>
+                            <td>@item.JobType</td>
+                            <td>@item.Wage</td>
+                            <td>@item.Rate</td>
+                            <td>@item.StartDate</td>
+                            <td>@item.EndDate</td>
+                            <td><b>@item.IsOnlineText</b></td>
+                        
+                            <td>
+                                <a class="btn btn-datatable btn-icon btn-transparent-dark me-2"    asp-controller="Advert" asp-action="Edit" asp-route-id="@item.Id"><i data-feather="edit"></i></a>
+                                <a class="btn btn-datatable btn-icon btn-transparent-dark"         asp-controller="Advert" asp-action="Delete" asp-route-id="@item.Id" onclick="return confirm('Silmek İstediğinize Eminmisiniz ?')"><i data-feather="trash-2"></i></a>
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

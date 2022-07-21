@@ -11,6 +11,7 @@ namespace Advert.Infrastructer
        
         public DbSet<Companys> Companys { get; set; }
         public DbSet<Adverts> Adverts { get; set; }
+        public DbSet<KeyWordBlackList> KeyWordBlackList { get; set; }
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
         {
@@ -26,6 +27,11 @@ namespace Advert.Infrastructer
             });
 
             modelBuilder.Entity<Adverts>(b =>
+            {
+                b.HasKey(e => e.Id);
+                b.Property(e => e.Id).ValueGeneratedOnAdd();
+            });
+            modelBuilder.Entity<KeyWordBlackList>(b =>
             {
                 b.HasKey(e => e.Id);
                 b.Property(e => e.Id).ValueGeneratedOnAdd();

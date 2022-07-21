@@ -16,9 +16,10 @@ namespace Advert.Domain.Entityes
         public int AdvertQualityRate { get; set; }
         public string? Benefits { get; set; }
         public string? JobType { get; set; }
-        public decimal? Wage { get; set; }
+        public string? Wage { get; set; }
         public long CompanyId { get; set; }
         [ForeignKey("CompanyId")]
         public Companys Company { get; set; }
+        public bool IsOnline { get; set; }
     }
 }

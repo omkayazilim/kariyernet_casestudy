@@ -14,7 +14,7 @@ namespace Advert.Infrastructer
     {
         DbSet<Companys> Companys { get; set; }
         DbSet<Adverts> Adverts { get; set; }
-
+        DbSet<KeyWordBlackList> KeyWordBlackList { get; set; }
         Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken());
     }
 }

@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace Advert.Domain
 {
- 
+
+    public enum AdvertStatus { 
+       Online,
+       Template,
+       Expired
+
+    }
 
  
 }

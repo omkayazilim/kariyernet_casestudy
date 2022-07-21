@@ -58,7 +58,7 @@ namespace Areas.cms
             {
                 return Ok(new OperationResultDto<string>(message: result.Message, result: ReturnUrl, status: true));
             }
-            return Ok(new OperationResultDto<string>(message: result.Message, result: "/cms", status: true));
+            return Ok(new OperationResultDto<string>(message: result.Message, result: "/MainPage", status: true));
 
 
 

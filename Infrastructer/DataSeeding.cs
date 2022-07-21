@@ -15,9 +15,16 @@ namespace Advert.Infrastructer
     {
         public static async Task Seed(IAppDbContext app)
         {
-          
+            if (app.KeyWordBlackList.Count() == 0)
+            {
+                app.KeyWordBlackList.Add(new KeyWordBlackList { KeyWord="Kötü"  });
+                app.KeyWordBlackList.Add(new KeyWordBlackList { KeyWord = "Çirkin" });
+                app.KeyWordBlackList.Add(new KeyWordBlackList { KeyWord = "yanlış" });
+              
+                await app.SaveChangesAsync();
+            }
 
-           
+
         }
 
 

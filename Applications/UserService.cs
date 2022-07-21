@@ -15,7 +15,7 @@ namespace Advert.Applications
     public interface IUserService : IScopedDependency
     {
         Task<OperationResultDto<Companys>> LoginProcess(LoginPostDto user);
-        Task<OperationResultDto<string>> RegisterProcess(RegisterDto user);
+        Task<OperationResultDto> RegisterProcess(RegisterDto user);
     }
     public class UserService : ServicesBase, IUserService
     {
@@ -36,16 +36,17 @@ namespace Advert.Applications
         public async Task<OperationResultDto> RegisterProcess(RegisterDto input)
         {
             if (await _context.Companys.AnyAsync(c => c.Phone.Equals(input.Phone)))
-                return new OperationResultDto(status: false, message: " Company is Exist");
+                return new OperationResultDto(status: false, message: " Firma Zaten Kayıtlı");
 
             var result = _context.Companys.Add(
-                new Companys 
+                new Companys
                 {
-                  Password=input.Password, 
-                  CompanyName=input.Adress,
-                  Adress=input.Adress,  
-                  Phone=input.Phone,   
-                  
+                    Password = input.Password,
+                    CompanyName = input.CompanyName,
+                    Adress = input.Adress,
+                    Phone = input.Phone,
+                    AdvertsLimit = 2
+
                 });
             await _context.SaveChangesAsync();
             return new OperationResultDto(true,"Success");

@@ -1,8 +1,6 @@
 ﻿@using System.Security.Claims
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -27,7 +25,7 @@
                     id="sidebarToggle">
                 <i data-feather="menu"></i>
             </button>
-            <a class="navbar-brand pe-3 ps-4 ps-lg-2"  href="/cms">Yönetim Paneli</a>
+            <a class="navbar-brand pe-3 ps-4 ps-lg-2"  href="/">Yönetim Paneli</a>
             <ul class="navbar-nav align-items-center ms-auto">
                 <li class="nav-item dropdown no-caret dropdown-user me-3 me-lg-4">
                     <a class="btn btn-icon btn-transparent-dark dropdown-toggle" id="navbarDropdownUserImage"
@@ -63,46 +61,16 @@
                     <div class="nav accordion" id="accordionSidenav">
                         <div class="sidenav-menu-heading">Ana Sayfa</div>
                         <!-- Sidenav Accordion (Dashboard)-->
-                        <a class="nav-link" href="/cms">
+                        <a class="nav-link" href="/">
                             <div class="nav-link-icon"><i data-feather="activity"></i></div>
                             Ana Sayfa
                         </a>
-
-                         
-                     
-                       <div class="sidenav-menu-heading">Sayfalar </div>
-                              
-
-                               
-                          
-
-                          <div class="sidenav-menu-heading">Slider </div>
-                        <a class="nav-link" asp-area="Cms" asp-controller="Sliders" asp-action="MainPageSlider">
+                    
+                        <a class="nav-link"  asp-controller="Advert" asp-action="Index">
                             <div class="nav-link-icon"><i data-feather="tool"></i></div>
-                             Ana Sayfa Slider Ayarları
+                             İlan Listesi
                          </a>
-
-                          <a class="nav-link" asp-area="Cms" asp-controller="Certificates" asp-action="Index">
-                            <div class="nav-link-icon"><i data-feather="tool"></i></div>
-                            Sertifika Yönetimi
-                         </a>
-
-                         
-                          <a class="nav-link" asp-area="Cms" asp-controller="GalleryImages" asp-action="Index">
-                            <div class="nav-link-icon"><i data-feather="tool"></i></div>
-                           Galeri Yönetimi
-                         </a>
-
-                        <div class="sidenav-menu-heading">Gelen Kutusu</div>
-                        <a class="nav-link" asp-area="Cms" asp-controller="Message" asp-action="Index" >
-                            <div class="nav-link-icon"><i data-feather="tool"></i></div>
-                           Mesajlar
-                        </a>
-
-                         <div class="sidenav-menu-heading">Dil Ayarları</div>
-                           <a class="nav-link" asp-area="Cms" asp-controller="Cultures" asp-action="Index">Diller</a>
-                          </div>
-                        
+                     </div>   
                 </div>
                 <!-- Sidenav Footer-->
                 <div class="sidenav-footer">
@@ -121,7 +89,7 @@
             <footer class="footer-admin mt-auto footer-light">
                 <div class="container-xl px-4">
                     <div class="row">
-                        <div class="col-md-6 small">&copy; Innova @DateTime.Now.Year</div>
+                
                     </div>
                 </div>
             </footer>
@@ -134,9 +102,8 @@
     <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
     <script src="https://cdn.ckeditor.com/ckeditor5/32.0.0/classic/ckeditor.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
-            crossorigin="anonymous"></script>
+  crossorigin="anonymous"></script>
     <script src="~/cms/js/litepicker.js"></script>
-
     <script src="~/cms/js/datatables/datatables-simple-demo.js"></script>
     <partial name="_ValidationScriptsPartial" />
     @await RenderSectionAsync("Scripts", required: false)

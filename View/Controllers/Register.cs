@@ -1,4 +1,5 @@
 ﻿using Advert.Applications;
+using Advert.Domain.Dtos;
 using Advert.Domain.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,10 +17,14 @@ namespace Advert.View.Controllers
             return View();
         }
         [HttpPost("RegisterPost")]
-        public string RegisterPost(string Phone, string CompanyName,string Adress,string Password) 
+        public async Task<OperationResultDto> RegisterPost(RegisterDto input) 
         {
-
-            return "";
+            if (!ModelState.IsValid)
+            {
+                return new OperationResultDto(false,"Alan Boş Geçilemez !");
+            }
+            var resp=  await _service.RegisterProcess(input);
+            return resp;
         
         }
     }
