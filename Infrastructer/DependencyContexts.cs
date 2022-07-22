@@ -12,8 +12,6 @@ namespace Advert.Infrastructer
             return services;
         
         }
-
-
         public static void SetSqlServerOptions(this DbContextOptionsBuilder builder, IConfiguration conf)
         {
             string connectionString = conf[$"ConnectionStrings:Default"];
