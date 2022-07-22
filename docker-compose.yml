@@ -1,0 +1,41 @@
+version: '3.3'
+services:
+
+  mysqldb:
+    image: mysql:latest
+    container_name: mysqldb
+    environment:
+     MYSQL_ROOT_PASSWORD: '2096Hipopotam'
+    ports:
+     - '3306:3306'
+    volumes:
+      - datamysql:/var/lib/mysql
+    networks:
+      - advert
+
+
+  redis:
+   image: redis:latest
+   container_name: redis
+   ports:
+    - '6379:6379'
+   networks:
+   - advert
+
+  advert:
+   image: omka/advertcase:latest
+   container_name: advertcase
+   ports:
+     - 8090:80
+   networks:
+     - advert
+   depends_on:
+    - mysqldb
+    - redis
+
+networks:
+  advert:
+    driver: bridge
+volumes:
+  datamysql:
+

@@ -9,7 +9,6 @@ namespace Tests.TestHelpers
 {
     internal class DbMockHelper
     {
-
         internal static DbSet<T> CreateMockDbSet<T>(List<T> entity) where T : class 
         { 
           var dbset=entity.AsQueryable().BuildMockDbSet();

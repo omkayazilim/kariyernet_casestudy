@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Advert.Infrastructer.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220720172701_crtfrst34")]
-    partial class crtfrst34
+    [Migration("20220722092836_firstdbcreate")]
+    partial class firstdbcreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -50,6 +50,9 @@ namespace Advert.Infrastructer.Migrations
                     b.Property<bool>("IsActive")
                         .HasColumnType("tinyint(1)");
 
+                    b.Property<bool>("IsOnline")
+                        .HasColumnType("tinyint(1)");
+
                     b.Property<string>("JobType")
                         .HasColumnType("longtext");
 
@@ -68,8 +71,8 @@ namespace Advert.Infrastructer.Migrations
                         .HasMaxLength(20)
                         .HasColumnType("varchar(20)");
 
-                    b.Property<decimal?>("Wage")
-                        .HasColumnType("decimal(65,30)");
+                    b.Property<string>("Wage")
+                        .HasColumnType("longtext");
 
                     b.HasKey("Id");
 
@@ -128,6 +131,39 @@ namespace Advert.Infrastructer.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("T_Companys");
+                });
+
+            modelBuilder.Entity("Advert.Domain.Entityes.KeyWordBlackList", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("CreatedUser")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("varchar(20)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<string>("KeyWord")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("UpdatedUser")
+                        .HasMaxLength(20)
+                        .HasColumnType("varchar(20)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("T_KeyWordBlackList");
                 });
 
             modelBuilder.Entity("Advert.Domain.Entityes.Adverts", b =>

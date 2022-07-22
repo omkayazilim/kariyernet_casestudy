@@ -14,3 +14,8 @@
 /View/obj
 /Tests/bin/Debug/net6.0
 /Tests/obj
+/Applications/bin/Release/net6.0
+/Domain/bin/Release/net6.0
+/Infrastructer/bin/Release/net6.0
+/Tests/bin/Release/net6.0
+/View/bin/Release
