@@ -12,6 +12,10 @@ services:
       - datamysql:/var/lib/mysql
     networks:
       - advert
+    healthcheck:
+     test: mysqladmin ping -h mysqldb -u root --password=2096Hipopotam
+     timeout: 20s
+     retries: 10
 
 
   redis:
@@ -30,8 +34,9 @@ services:
    networks:
      - advert
    depends_on:
-    - mysqldb
-    - redis
+     mysqldb:
+      condition: service_healthy
+  
 
 networks:
   advert:
